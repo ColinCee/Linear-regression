@@ -16,11 +16,8 @@
     <div class="container">
       <div class="game">
           <h1 class="title">
-            Hello World
+            Tetris!
           </h1>
-          <p class="subtitle">
-            My first website with <strong>Bulma</strong>!
-          </p>
           <div class="game-container">
 
           </div>

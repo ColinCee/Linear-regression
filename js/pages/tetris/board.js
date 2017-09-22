@@ -11,8 +11,8 @@ class Board {
     }
 
     initPlayingField() {
-        for(var i=0;i<this.rows;i++) {
-    		for(var j=0;j<this.columns;j++) {
+        for(let i=0;i<this.rows;i++) {
+    		for(let j=0;j<this.columns;j++) {
     			this.playingField[i][j] = " ";
     		}
     	}

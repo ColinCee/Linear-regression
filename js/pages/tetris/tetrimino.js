@@ -7,8 +7,10 @@ class Tetrimino {
     }
 
     tick() {
-        for(let i=0;i<this.position.length; i++) {
-            this.position[i][0] += 1;
+        if(this.position[3][0] < 21) {
+            for (let i = 0; i < this.position.length; i++) {
+                this.position[i][0] += 1;
+            }
         }
     }
 
@@ -22,6 +24,22 @@ class Tetrimino {
             for(let i=0;i<this.position.length; i++) {
                 this.position[i][0] = this.position[i][0] + i;
                 this.position[i][1] = this.position[0][1];
+            }
+        }
+    }
+    translateLeft() {
+        //Check that moving right won't go out of bounds
+        if (this.position[0][1] > 0) {
+            for (let i = 0; i < this.position.length; i++) {
+                this.position[i][1] -= 1;
+            }
+        }
+    }
+    translateRight() {
+        //Check that moving right won't go out of bounds
+        if(this.position[3][1] < 10) {
+            for (let i = 0; i < this.position.length; i++) {
+                this.position[i][1] += 1;
             }
         }
     }

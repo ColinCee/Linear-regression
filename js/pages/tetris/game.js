@@ -1,13 +1,21 @@
 /* GLOBALS */
 var counter = 0;
-const updateSpeed = 5;
+let updateSpeed = 250;
 var board = new Board();
 
-
-//REMOVE THIS SHIT AND USE A THE BULMA TABLE GOD DAMN IT
 function printPlayingField() {
     clearBoard();
+    for (let i = 0; i < tetrimino.position.length; i++) {
+        let position = tetrimino.position[i];
+        board.updateCell(position[0], position[1], tetrimino.color);
+    }
     $('.game-container').html(board.getHTMLTable());
+
+    //Clear old positions
+    for (let i = 0; i < tetrimino.position.length; i++) {
+        let position = tetrimino.position[i];
+        board.updateCell(position[0], position[1], "");
+    }
 }
 
 function clearBoard() {
@@ -16,26 +24,24 @@ function clearBoard() {
 
 var tetrimino = new Tetrimino();
 
-function updateDiagonals() {
+function update() {
     setTimeout(function() {
-        for(let i=0;i<tetrimino.position.length;i++) {
-            let position = tetrimino.position[i];
-            board.updateCell(position[0], position[1], tetrimino.color);
-        }
         printPlayingField();
-        //Clear old positions
-        for(let i=0;i<tetrimino.position.length;i++) {
-            let position = tetrimino.position[i];
-            board.updateCell(position[0], position[1], "");
-        }
         tetrimino.tick();
-
-        counter++;
-        if(counter<board.rows) {
-            updateDiagonals();
-        }
-
-    }, 1000);
+        update();
+    }, updateSpeed);
 }
 
-updateDiagonals();
+update();
+
+$("body").keydown(function(e) {
+    switch (e.key) {
+        case "ArrowLeft":
+            tetrimino.translateLeft();
+            break;
+        case "ArrowRight":
+            tetrimino.translateRight();
+            break;
+    }
+    printPlayingField();
+});
