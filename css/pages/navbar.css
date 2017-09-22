@@ -1,0 +1,19 @@
+/* Navigation*/
+
+.scrolling-navbar {
+    -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+    transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.top-nav-collapse {
+    background-color: #3c4f74;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.fa-home{
+  color: #4285F4;
+}

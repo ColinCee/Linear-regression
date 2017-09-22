@@ -1,0 +1,28 @@
+/*some padding for the first heading*/
+main{
+  padding-top: 6rem;
+}
+
+.intro{
+  padding-bottom: 2rem
+}
+
+.caption{
+  padding-top: 1rem;
+}
+
+/*Chart JS*/
+
+.chart{
+  height: 400px;
+}
+
+.chart-control{
+  padding-top: 25%;
+}
+
+.table-bordered {
+   height: 50;
+   margin:auto;
+
+}
