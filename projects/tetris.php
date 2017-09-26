@@ -14,6 +14,13 @@
 <body>
   <section class="section">
     <div class="container">
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
       <div class="game">
           <h1 class="title">
             Tetris!
@@ -28,7 +35,8 @@
 <script type="text/javascript" src="https://devweb2015.cis.strath.ac.uk/~qhb13183/home/js/jquery-2.2.3.min.js"></script>
 
 <!-- Page specific JS -->
-  <script src="../js/pages/tetris/tetrimino.js"></script>
+<script src="../js/pages/tetris/tetriminoes/iblock.js"></script>
+<script src="../js/pages/tetris/tetriminoes/zblock.js"></script>
 <script src="../js/pages/tetris/board.js"></script>
 <script src="../js/pages/tetris/game.js"></script>
 

@@ -1,47 +1,49 @@
 /* GLOBALS */
-var counter = 0;
-let updateSpeed = 250;
+let updateSpeed = 200;
 var board = new Board();
-
-function printPlayingField() {
-    clearBoard();
-    for (let i = 0; i < tetrimino.position.length; i++) {
-        let position = tetrimino.position[i];
-        board.updateCell(position[0], position[1], tetrimino.color);
-    }
-    $('.game-container').html(board.getHTMLTable());
-
-    //Clear old positions
-    for (let i = 0; i < tetrimino.position.length; i++) {
-        let position = tetrimino.position[i];
-        board.updateCell(position[0], position[1], "");
-    }
-}
-
-function clearBoard() {
-    $('.game-container').html("");
-}
-
-var tetrimino = new Tetrimino();
+board.printPlayingField();
 
 function update() {
     setTimeout(function() {
-        printPlayingField();
-        tetrimino.tick();
-        update();
+        board.tick();
+        board.printPlayingField();
+        if(!board.isGameOver()){
+            update();
+        }
     }, updateSpeed);
 }
 
 update();
 
 $("body").keydown(function(e) {
+	board.setCurrentTetriminoValue("");
     switch (e.key) {
         case "ArrowLeft":
-            tetrimino.translateLeft();
+            translateTetriminoLeft();
             break;
         case "ArrowRight":
-            tetrimino.translateRight();
+            board.currentTetrimino.translateRight();
+            break;
+        case "ArrowUp":
+        case "ArrowDown":
+            board.currentTetrimino.rotate();
             break;
     }
-    printPlayingField();
+    board.printPlayingField();
 });
+
+function translateTetriminoLeft() {
+    let position = board.currentTetrimino.position;
+
+    for (let i=0;i<position.length; i++) {
+        let x = position[i][0];
+        let y = position[i][1];
+
+        if (board.playingField[x+1][y] !== "") {
+            board.currentTetrimino.translateLeft();
+        } else if (position[i+1][0] !== x+1) {
+            board.currentTetrimino.translateLeft();
+        }
+    }
+
+}
