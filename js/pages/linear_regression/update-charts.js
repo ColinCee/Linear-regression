@@ -238,7 +238,7 @@ function createMixedChart(){
 
 function loadChartData(){
   var promise = $.ajax({
-    url: "https://devweb2015.cis.strath.ac.uk/~qhb13183/home/data/linear-regression-data.csv",
+    url: "../data/linear-regression-data.csv",
     success: function (csvd) {
         data = $.csv.toArrays(csvd);
     },

@@ -58,7 +58,7 @@
             <div class="col-lg-3">
                 <div class="card wow fadeIn">
                     <div class="view overlay hm-white-slight">
-                        <img src="https://devweb2015.cis.strath.ac.uk/~qhb13183/home/img/svg/linear_regression.jpg">
+                        <img src="img/svg/linear_regression.jpg">
                         <a href="projects/linear-regression.php">
                             <div class="mask"></div>
                         </a>

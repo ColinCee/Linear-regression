@@ -32,7 +32,7 @@
     </div>
   </section>
 <!-- JQuery -->
-<script type="text/javascript" src="https://devweb2015.cis.strath.ac.uk/~qhb13183/home/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
 
 <!-- Page specific JS -->
 <script src="../js/pages/tetris/tetriminoes/iblock.js"></script>
